@@ -1,0 +1,28 @@
+    .links-body{
+        display: flex;
+        flex-wrap: wrap;
+    .link{
+        margin-top: 10px;
+        font-weight: $semi-bold;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .year{
+            color: $grey;
+            margin-left: 3px;
+        }
+    }
+}
+    @include respond-to('desktop'){
+        .links-body{
+            display: flex;
+            justify-content: space-between;
+            .one, .two{
+                margin-top: 0;
+            }
+        .link{
+            flex: 0 48%;
+            justify-content: space-between;
+        }
+    }
+    }

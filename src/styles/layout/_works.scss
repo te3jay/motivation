@@ -1,0 +1,96 @@
+#works {
+    max-width: 100%;
+    .figures {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 100%;
+        justify-content: center;
+        max-width: 100%;
+    }
+    figure {
+        width: 100%;
+        margin-top: 30px;
+        position: relative;
+        max-width: 520px;
+        height: 100%;
+            img {
+            width: 100%;
+        }
+        figcaption {
+            .featured {
+                display: block;
+                font-size: 12px;
+                font-weight: $extra-bold;
+                text-align: center;
+                line-height: 23px;
+                color: black;
+                background-color: $yellow;
+                width: 80px;
+                border-radius: 25px;
+            }
+            .figcaption-text {
+                visibility: hidden;
+                color: white;
+                text-transform: capitalize;
+                font-size: 18px;
+                font-weight: $bold;
+                max-width: 60%;
+                max-height: 50%;
+                margin-bottom: 20px;
+                margin-left: 20px;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+            }
+            background:
+                linear-gradient(
+                to left,
+                $yellow 0%,
+                $yellow 1px,
+                transparent 0px
+                );
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+        figcaption:hover{
+            visibility: visible;
+            background: 
+            linear-gradient(
+                to left,
+                $yellow 0%,
+                $yellow 1px,
+                transparent 80%
+                );
+        }
+        figcaption:hover .figcaption-text{
+            visibility: visible;
+        }
+    }
+}
+@include respond-to('desktop'){
+    #works{
+        .figures{
+            margin: -15px 0;
+            justify-content: space-between;
+            .three {
+                margin-top: -180px;
+            }
+            .one, .two{
+                margin-top: 0;
+            }
+            .four {
+                margin-top: 50px;
+            }
+
+            figure {
+                flex: 0 48%;
+                figcaption{
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}

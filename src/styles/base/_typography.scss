@@ -1,0 +1,30 @@
+//! import google fonts
+// @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');
+// OR use @font-face like below
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700,800');
+
+
+//! import a custom font below
+
+
+//! set font variables
+$font-heading: 'Nunito', sans-serif;
+$font-body: 'Nunito', sans-serif;
+
+
+html {
+  font-size: 62.5%; // 1rem = 10px, 3.5rem = 35px;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $black;
+}
+
+h1 {
+  font-family: $font-heading, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+}

@@ -1,0 +1,36 @@
+#about {
+    .article {
+        margin-top: 20px;
+
+        p{
+            margin-top: 10px;
+        }
+    }
+
+    #svg{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+}
+@include respond-to('desktop'){
+    #about{
+        .articles-body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-weight: $semi-bold; 
+            .one, .two{
+                margin-top: 0;
+            }       
+        .article {
+            flex: 0 48%;
+        }
+    }
+    #svg {
+        width: 55%;
+    }
+    }
+}

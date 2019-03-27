@@ -1,0 +1,50 @@
+    nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 9;
+        i{
+            display: block;
+        }
+
+        img {
+            position: absolute;
+            margin: 0 auto;
+            width: 52px;
+            height: 52px;
+            left: 0;
+            right: 0;
+
+        }
+        ul {
+            display: none;
+        }
+    }
+@include respond-to('desktop'){
+    nav .fas {
+        display: none;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        .navigation{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 20%;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

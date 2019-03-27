@@ -1,0 +1,75 @@
+#contact {
+    #socials a i{
+        margin-right: 15px;
+      }
+    form {
+        display: flex;
+        flex-direction: column;
+        .form-body{
+            display: flex;
+            flex-direction: column;
+        label {
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 12px;
+        }
+        input, textarea { border:none; }
+        input, textarea {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            border-bottom: 2px solid $light-grey;}
+        input, label, button,textarea {
+            margin-top: 20px;
+        }}
+        button{
+            border: none;
+            background: none;
+            align-self: flex-end;
+            margin-top: 20px;
+            .fa-circle{
+                color: $light-grey;
+            }
+            .fa-telegram-plane{
+                margin: 0 auto;
+            }
+
+        } 
+    }
+}
+@include respond-to('desktop'){
+    #contact{
+        margin-top: 150px;
+        .contact-body{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            .contact-text{
+                max-width: 25%;
+            }
+            form{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                width: 75%;
+                .form-body{
+                    width: inherit;
+                label{
+                    margin-top: 0;
+                }
+                input{
+                    margin-bottom: 20px;
+                }
+            }
+            button{
+                align-self: flex-start;
+                max-height: 52px;
+                margin-top: 0;
+            }
+            }
+        }
+        
+
+    }
+}

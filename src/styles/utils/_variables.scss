@@ -1,0 +1,35 @@
+//? set your brand colors
+
+$white: #fff;
+
+$light-grey: #c2c2c2;
+$grey: #979797;
+
+$black-ish: #444;
+$black: #09090e;
+
+$blue: #007FFF;
+
+$yellow: #FFE300;
+
+
+//? override for project clarity
+
+$color-primary: $blue;
+$color-tertiary: $yellow;
+
+// Font variables
+
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+
+// margins
+
+$margin-section: 30px;
+
+
+@include respond-to('desktop'){
+    $margin-section:150px;
+}

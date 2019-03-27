@@ -1,0 +1,100 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+#wrapper {
+  margin: 60px auto;
+  max-width: 80%;
+}
+
+section {
+  margin-top: 30px;
+  position: relative
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  }
+
+h2 {
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $grey;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+h3 {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+}
+
+i {
+  color: $blue;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+ul {
+  font-size: 12px;
+  font-weight: $extra-bold;
+  padding: 0;
+  list-style: none;
+}
+
+strong, a {color: $blue}
+
+@include respond-to('desktop'){
+  #wrapper{
+    width: 1100px;
+  }
+  section {
+    margin-top: 150px;
+  }
+  h1{
+    font-size: 48px;
+    max-width: 50%;
+  }
+  h2{
+    position: absolute;
+    margin-left: -120px;
+    transform: rotate(-90deg);
+    transform-origin: top right;
+    letter-spacing: 3px;
+  }
+  h3 {
+    font-size: 28px;
+    font-weight: $semi-bold;
+  }
+  p{
+    font-size: 16px;
+  }
+  
+}
