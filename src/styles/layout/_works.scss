@@ -42,31 +42,21 @@
                 left: 0;
                 position: absolute;
             }
-            background:
-                linear-gradient(
-                to left,
-                $yellow 0%,
-                $yellow 1px,
-                transparent 0px
-                );
             position: absolute;
             bottom: 0;
             left: 0;
             height: 100%;
             width: 100%;
+            transition: box-shadow .5s;
+            overflow: hidden;
         }
         figcaption:hover{
             visibility: visible;
-            background: 
-            linear-gradient(
-                to left,
-                $yellow 0%,
-                $yellow 1px,
-                transparent 80%
-                );
+            box-shadow: 0 0 15px #000;
         }
         figcaption:hover .figcaption-text{
             visibility: visible;
+            animation: slide-up .5s;
         }
     }
 }
@@ -94,3 +84,12 @@
         }
     }
 }
+
+@keyframes slide-up {
+    0%   { 
+    transform: translateY(120%); 		
+    }
+    100% { 
+    transform: translateY(0%); 
+    }
+   }
