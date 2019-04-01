@@ -1,22 +1,23 @@
+/*
 #works {
     max-width: 100%;
-    .figures {
-        display: flex;
-        flex-wrap: wrap;
-        flex: 0 0 100%;
-        justify-content: center;
-        max-width: 100%;
-    }
-    figure {
+    .grid {
         width: 100%;
+    }
+    .grid-item {
+        width: 500px;
         margin-top: 30px;
         position: relative;
         max-width: 520px;
         height: 100%;
-            img {
-            width: 100%;
-        }
         figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transition: box-shadow .3s ease-in;
+            overflow: hidden;
             .featured {
                 display: block;
                 font-size: 12px;
@@ -29,7 +30,7 @@
                 border-radius: 25px;
             }
             .figcaption-text {
-                visibility: hidden;
+                opacity: 0;
                 color: white;
                 text-transform: capitalize;
                 font-size: 18px;
@@ -41,41 +42,24 @@
                 bottom: 0;
                 left: 0;
                 position: absolute;
+                transform: translateY(100%);
+                transition: .3s ease-in;
             }
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            transition: box-shadow .5s;
-            overflow: hidden;
         }
         figcaption:hover{
-            visibility: visible;
             box-shadow: 0 0 15px #000;
         }
         figcaption:hover .figcaption-text{
-            visibility: visible;
-            animation: slide-up .5s;
+            opacity: 1;
+            transform: translateY(0%);
         }
     }
 }
 @include respond-to('desktop'){
     #works{
-        .figures{
-            margin: -15px 0;
-            justify-content: space-between;
-            .three {
-                margin-top: -180px;
-            }
-            .one, .two{
-                margin-top: 0;
-            }
-            .four {
-                margin-top: 50px;
-            }
+        .grid{
 
-            figure {
+            .grid-item {
                 flex: 0 48%;
                 figcaption{
                     font-size: 28px;
@@ -84,12 +68,41 @@
         }
     }
 }
+*/
 
-@keyframes slide-up {
-    0%   { 
-    transform: translateY(120%); 		
-    }
-    100% { 
-    transform: translateY(0%); 
-    }
-   }
+/* ---- grid ---- */
+#works{
+.grid {
+  background: none;
+  max-width: 1100px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 100%;
+  height: 264px;
+  background-image: url(/src/images/Photo1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item--width2 { width:  40%; }
+.grid-item--width3 { width:  60%; }
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }
+}
