@@ -89,48 +89,66 @@
 .grid-sizer,
 .grid-item {
   width: 100%;
+
+  @include respond-to('desktop'){
+      width: 45%;
+  }
   
 }
 
 .grid-item {
-  float: left;
+  float: right;
   height: 306px;
   position: relative;
-  background-image: url(/src/images/Photo1.png);
-  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 
-  figcaption {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    figcaption {
+        position: absolute;
+        height: 100%;
+        width: 100%;
 
-    opacity: 0;
-    overflow: hidden;
+        opacity: 0;
+        overflow: hidden;
 
-    transition: .3s ease-in;
+        transition: .3s ease-in;
 
-    .featured {
-        display: block;
-        font-size: 12px;
-        font-weight: $extra-bold;
-        text-align: center;
-        line-height: 23px;
-        color: black;
-        background-color: $yellow;
-        width: 80px;
-        border-radius: 25px;
-    }
+        .figcaption-content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
 
-    p {
-        max-width: 60%;
-        color: #fff;
-    }
+            transform: translateY(120%);
+            transition: .3s ease-in;
+            .featured {
+                display: block;
+
+                font-size: 12px;
+                font-weight: $extra-bold;
+                text-align: center;
+                line-height: 23px;
+
+                color: black;
+                background-color: $yellow;
+
+                width: 80px;
+                border-radius: 25px;
+            }
+
+            p {
+                max-width: 60%;
+                color: #fff;
+                }
+            }
     }
 
     figcaption:hover{
         opacity: 1;
+        box-shadow: 0 0 15px #000;
         transition: .3s ease-in;
+    }
+    figcaption:hover .figcaption-content {
+        transform: translateY(0%);
     }
 }
 
