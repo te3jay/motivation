@@ -82,6 +82,7 @@
   content: '';
   display: block;
   clear: both;
+  margin: auto;
 }
 
 /* ---- grid-item ---- */
@@ -89,12 +90,13 @@
 .grid-sizer,
 .grid-item {
   width: 100%;
+  margin-bottom: 15px;
 }
 
   @include respond-to('desktop'){
     .grid-sizer,
     .grid-item {
-      width: 50%;
+      width: 49%;
   }
 }
   

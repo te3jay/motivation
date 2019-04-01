@@ -4,8 +4,12 @@ console.log('%c Welcome to tris-webpack-boilerplate! ', 'background: lavenderblu
 
 // add custom js below
 // external js: masonry.pkgd.js
+$( document ).ready( function() {
+
 $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
+    gutter: 15,
     percentPosition: true
-  });
+});
+});
