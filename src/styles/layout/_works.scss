@@ -69,7 +69,7 @@
     }
 }
 */
-
+* { box-sizing: border-box; }
 /* ---- grid ---- */
 #works{
 .grid {
@@ -89,15 +89,18 @@
 .grid-sizer,
 .grid-item {
   width: 100%;
-
-  @include respond-to('desktop'){
-      width: 45%;
-  }
-  
 }
 
+  @include respond-to('desktop'){
+    .grid-sizer,
+    .grid-item {
+      width: 50%;
+  }
+}
+  
+
 .grid-item {
-  float: right;
+  float: left;
   height: 306px;
   position: relative;
   background-position: center;
