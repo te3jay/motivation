@@ -89,20 +89,55 @@
 .grid-sizer,
 .grid-item {
   width: 100%;
-  height: 264px;
-  background-image: url(/src/images/Photo1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  
 }
 
 .grid-item {
   float: left;
+  height: 306px;
+  position: relative;
+  background-image: url(/src/images/Photo1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  figcaption {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    opacity: 0;
+    overflow: hidden;
+
+    transition: .3s ease-in;
+
+    .featured {
+        display: block;
+        font-size: 12px;
+        font-weight: $extra-bold;
+        text-align: center;
+        line-height: 23px;
+        color: black;
+        background-color: $yellow;
+        width: 80px;
+        border-radius: 25px;
+    }
+
+    p {
+        max-width: 60%;
+        color: #fff;
+    }
+    }
+
+    figcaption:hover{
+        opacity: 1;
+        transition: .3s ease-in;
+    }
 }
+
 
 .grid-item--width2 { width:  40%; }
 .grid-item--width3 { width:  60%; }
 
-.grid-item--height2 { height: 200px; }
-.grid-item--height3 { height: 260px; }
-.grid-item--height4 { height: 360px; }
+.grid-item--height2 { height: 404px; }
+.grid-item--height3 { height: 446px; }
 }

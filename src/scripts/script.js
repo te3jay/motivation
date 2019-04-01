@@ -3,7 +3,7 @@ console.log('%c Welcome to tris-webpack-boilerplate! ', 'background: lavenderblu
 
 
 // add custom js below
-
+// external js: masonry.pkgd.js
 $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
