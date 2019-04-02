@@ -1,80 +1,11 @@
-/*
-#works {
-    max-width: 100%;
-    .grid {
-        width: 100%;
-    }
-    .grid-item {
-        width: 500px;
-        margin-top: 30px;
-        position: relative;
-        max-width: 520px;
-        height: 100%;
-        figcaption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            transition: box-shadow .3s ease-in;
-            overflow: hidden;
-            .featured {
-                display: block;
-                font-size: 12px;
-                font-weight: $extra-bold;
-                text-align: center;
-                line-height: 23px;
-                color: black;
-                background-color: $yellow;
-                width: 80px;
-                border-radius: 25px;
-            }
-            .figcaption-text {
-                opacity: 0;
-                color: white;
-                text-transform: capitalize;
-                font-size: 18px;
-                font-weight: $bold;
-                max-width: 60%;
-                max-height: 50%;
-                margin-bottom: 20px;
-                margin-left: 20px;
-                bottom: 0;
-                left: 0;
-                position: absolute;
-                transform: translateY(100%);
-                transition: .3s ease-in;
-            }
-        }
-        figcaption:hover{
-            box-shadow: 0 0 15px #000;
-        }
-        figcaption:hover .figcaption-text{
-            opacity: 1;
-            transform: translateY(0%);
-        }
-    }
-}
-@include respond-to('desktop'){
-    #works{
-        .grid{
-
-            .grid-item {
-                flex: 0 48%;
-                figcaption{
-                    font-size: 28px;
-                }
-            }
-        }
-    }
-}
-*/
+@import "./Magnific-Popup.scss";
 * { box-sizing: border-box; }
 /* ---- grid ---- */
 #works{
 .grid {
   background: none;
   max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* clearfix */

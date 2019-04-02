@@ -12,4 +12,9 @@ $('.grid').masonry({
     gutter: 15,
     percentPosition: true
 });
+
+$(document).ready(function() {
+  $('.image-link').magnificPopup({type:'image'});
+});
+
 });
