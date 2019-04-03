@@ -40,10 +40,9 @@
     }
 @include respond-to('desktop'){
     .navbar{
-        position: fixed;
         width: 100vw;
         left: 50%;
-        margin-left: -50vw;
+       margin-left: -25%;
     }
 
     .navbar .fas {
