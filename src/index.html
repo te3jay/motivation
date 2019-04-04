@@ -31,6 +31,7 @@
   <script src="/src/scripts/script.js"></script>
   <script src="/src/scripts/vendor/jquery-3.2.1.min.js"></script>
   <script src="/src/scripts/jquery.magnific-popup.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
 </head>
 
@@ -38,14 +39,14 @@
   <div id="wrapper">
           <nav class="navbar">
               <div class="navbar-content">
-                  <i class="fas fa-bars"></i>
+                  <i class="fas fa-bars fa-2x" id="mobile-nav" onclick="toggle_visibility('nav-ul');"></i>
                   <div class="navigation">
-                      <ul>
+                      <ul class="nav-ul">
                           <li><a href="#works">works</a></li>
                           <li><a href="#about">about</a></li>
                       </ul>
                       <img src="images/Avatar.png" alt="Avatar" class="avatar">
-                      <ul>
+                      <ul class="nav-ul">
                           <li><a href="#links">links</a></li>
                           <li><a href="#contact">contacts</a></li>
                       </ul>

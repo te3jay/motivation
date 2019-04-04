@@ -17,4 +17,30 @@ $(document).ready(function() {
   $('.image-link').magnificPopup({type:'image'});
 });
 
+/*function toggle_visibility(id) {
+  var e = document.getElementsByClassName(id);
+  if(e.style.display == 'flex')
+     e.style.display = 'none';
+  else
+     e.style.display = 'flex';
+}*/
+
+  $("#mobile-nav").click(function(){
+    $("ul").toggle(500);
+    $("ul").css({
+      'z-index' : '9'
+    });
+    $("li").css({
+      'display' : 'block',
+      'width' : '100%',
+      'text-align' : 'center'
+
+    })
+    $(".navigation").css({
+      'width' : '100%',
+      'justify-content' : 'flex-start',
+      'align-items' : 'flex-start'
+    });
+  });
+
 });
