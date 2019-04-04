@@ -5,4 +5,5 @@ import './index.html';
 import './index.scss';
 import './scripts/script.js';
 import './scripts/masonry.pkgd.min.js';
+import './scripts/formvalidation.js';
 

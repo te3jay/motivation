@@ -13,7 +13,10 @@
             font-weight: 800;
             font-size: 12px;
         }
-        input, textarea { border:none; }
+        input, textarea {
+             border:none;
+             outline: none;
+             }
         input, textarea {
             font-family: 'Nunito', sans-serif;
             font-weight: 400;
