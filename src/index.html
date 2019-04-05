@@ -146,17 +146,20 @@
                       <a href="#"><i class="fab fa-instagram"></i></a>
                   </div>
               </div>
-              <form action="#">
+              <form name="contactform" action="#" id="contactform" onsubmit="return validateForm()" method="POST">
                   <div class="form-body">
                       <label for="name">name</label>
-                      <input type="text" id="name" name="name" placeholder="incognito" required>
+                      <input type="text" id="name" name="name" placeholder="incognito">
+                      <p class="form-feedback-name"></p>
                       <label for="email">e-mail</label>
-                      <input type="email" id="email" name="email" placeholder="incognito@gmail.com" required>
+                      <input type="email" id="email" name="email" placeholder="incognito@gmail.com" >
+                      <p class="form-feedback-email"></p>
                       <label for="message">message</label>
-                      <textarea name="message" id="message" cols="30" rows="5" placeholder="Your question or suggestion" required></textarea>
+                      <textarea name="message" id="message" cols="30" rows="5" placeholder="Your question or suggestion" ></textarea>
+                      <p class="form-feedback-message"></p>
                   </div>
 
-                      <button type="submit">
+                      <button type="submit" name="submit">
                           <span class="fa-stack fa-2x" type="submit">
                               <i class="fas fa-circle fa-stack-2x"></i>
                               <i class="fab fa-telegram-plane fa-stack-1x fa-inverse"></i>
