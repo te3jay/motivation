@@ -43,29 +43,10 @@ $(document).ready(function() {
     });
   });
 
-  $('#contactform').validate({ // initialize the plugin
-    rules: {
-        name: {
-            required: true,
-            minlength: 2,
-        },
-        email: {
-            required: true,
-            email: true,
-        },
-        message: {
-          required: true,
-          minlength: 10,
-        }
-    }
-});
 
-function validateForm() {
-  var x = document.forms["contactform"]["name"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
+$(".burger").click(function(){
+  $( ".burger" ).toggleClass( "open" )
+})
+
 
 });

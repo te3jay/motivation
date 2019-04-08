@@ -1,0 +1,22 @@
+.b-container-item {
+  padding: 100px;
+  text-align: center;
+  .b-container-item-inner {
+    display: flex;
+    justify-content: center;
+    padding-top: 100%;
+    position: relative;
+    &>* {
+      position: absolute;
+      top: calc(50% - 1em);
+    }
+  }
+  flex-basis: 25%;
+  flex-shrink: 0;
+  @media screen and (max-width: 768px) {
+    flex-basis: 50%;
+  }
+  @media screen and (max-width: 440px) {
+    flex-basis: 100%;
+  }
+}

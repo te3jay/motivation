@@ -1,0 +1,335 @@
+@import "../vars.scss";
+@import "./normalize.css";
+::-webkit-scrollbar-button {
+  display: none;
+  height: 13px;
+  border-radius: 0px;
+  background-color: orange;
+}
+
+::-webkit-scrollbar-button:hover {
+  background-color: orange;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 7px;
+  margin-right: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.4);
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  padding: 1px;
+  border-left: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.app {}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  background: $bg;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: $fontFamily;
+  background: $bg;
+  color: $textBase;
+  font-size: 16px;
+  font-weight: 400; // font smoothing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  p {
+    transition: all 0.2s;
+    margin: 0;
+    line-height: 1.375rem;
+    font-weight: 400;
+    color: $textSecondary;
+  }
+  input,
+  button,
+  textarea {
+    color: $textMain;
+    font-size: 16px;
+    font-family: $fontFamily;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    transition: all 0.2s;
+    margin: 0;
+    line-height: 1.1;
+    font-weight: 600;
+    color: $textMain;
+  }
+  *+p {
+    margin-top: 0.7em;
+  }
+  *+h1,
+  *+h2,
+  *+h3,
+  *+h4,
+  *+h5 {
+    margin-top: 1.725rem;
+  }
+  h1+*,
+  h2+*,
+  h3+*,
+  h4+* {
+    margin-top: 1em;
+  }
+  input,
+  textarea {
+    font-size: .875rem;
+  }
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+  p,
+  ul,
+  ol {
+    &+* {
+      margin-top: 1.125em;
+    }
+  }
+  p+p {
+    margin-top: 0.4em;
+  }
+  a {
+    transition: .2s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  p,
+  ul {
+    a {
+      display: inline-block;
+      position: relative;
+      transition: all 0.2s;
+      color: $primary;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  strong {
+    font-weight: 500;
+  }
+  ul,
+  ol {
+    line-height: 1.5;
+    color: $textBase;
+    font-size: 0.875rem;
+    padding-left: 2em;
+    *:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+  ol {
+    padding-left: 20px;
+  }
+  ul:global(.no-style) {
+    list-style: none;
+    padding-left: 0;
+    ul {
+      padding-left: 20px;
+    }
+  }
+  code:not([class]) {
+    display: inline-block;
+    background: #FBFBFD;
+    border: 1px solid #DADEE7;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #34AA44;
+    line-height: 1.375rem;
+    padding: 4px 12px;
+    font-family: $fontFamily;
+  }
+}
+
+:global #root {
+  height: 100%;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $textSecondary;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $textSecondary;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $textSecondary;
+}
+
+form {
+  max-width: 760px;
+}
+
+// some helpers and pregenerated color classes
+@each $name,
+$color in $colorPairs {
+  &:global(.color-#{$name}) {
+    color: $color;
+  }
+}
+
+.item-title {
+  position: absolute;
+  bottom: -5em !important;
+  top: auto !important;
+  color: white;
+  display: block;
+  font-size: .875rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.hero {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
