@@ -2,30 +2,36 @@
     #socials a i{
         margin-right: 15px;
       }
+
     form {
         display: flex;
         flex-direction: column;
+
         .form-body{
             display: flex;
             flex-direction: column;
-        label {
-            text-transform: uppercase;
-            font-weight: 800;
-            font-size: 12px;
-        }
-        input, textarea {
-             border:none;
-             outline: none;
-             }
-        input, textarea {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            border-bottom: 2px solid $light-grey;}
-        input, label, button,textarea {
-            margin-top: 20px;
-        }
-        p {color:red;}
+
+            label {
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 12px;
+            }
+            input, textarea {
+                border:none;
+                outline: none;
+                }
+            input, textarea {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                
+                border-bottom: 2px solid $light-grey;
+            }
+
+            input, label, button,textarea {
+                margin-top: 20px;
+            }
+            p {color:red;}
     
         }
         button{
@@ -33,12 +39,13 @@
             background: none;
             align-self: flex-end;
             margin-top: 20px;
-            .fa-circle{
-                color: $light-grey;
-            }
-            .fa-telegram-plane{
-                margin: 0 auto;
-            }
+
+                .fa-circle{
+                    color: $light-grey;
+                }
+                .fa-telegram-plane{
+                    margin: 0 auto;
+                }
 
         } 
     }

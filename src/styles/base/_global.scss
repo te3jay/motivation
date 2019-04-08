@@ -51,11 +51,11 @@ p {
 
 a {
   text-decoration: none;
-  color: $blue;
+  color: $accent;
 }
 
 i {
-  color: $blue;
+  color: $accent;
 }
 
 img {
@@ -70,7 +70,7 @@ ul {
   list-style: none;
 }
 
-strong, a {color: $blue}
+strong, a {color: $accent}
 
 @include respond-to('desktop'){
   #wrapper{
