@@ -20,9 +20,15 @@ $( document ).ready( function() {
      e.style.display = 'flex';
 }*/
 
-$(".burger").click(function(){
-  $(".burger").toggleClass( "open" )
-});
+  $(".burger").click(function(){
+    $(".burger").toggleClass("open")
+    $(".navbar").toggleClass("navbar--open")
+    $(".navbar__ul").toggleClass("navbar__ul--open")
+    $(".navbar__menu").css({
+      'display' : 'flex'
+    })
+    
+  });
 
 });
 
