@@ -7,3 +7,8 @@ import './scripts/script.js';
 import './scripts/masonry.pkgd.min.js';
 import './scripts/formvalidation.js';
 
+import './images/Photo1.png';
+import './images/Photo2.png';
+import './images/Photo3.png';
+import './images/Photo4.png';
+
