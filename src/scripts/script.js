@@ -32,6 +32,13 @@ $( document ).ready( function() {
     
   });
 
+  $(".navbar__menu__a").click(function(){
+    $(".burger").toggleClass("open")
+    $(".navbar").toggleClass("navbar--open")
+    $(".navbar__ul").toggleClass("navbar__ul--open")
+    $(".navbar__menu").toggleClass("navbar__menu--open")
+  })
+
 });
 
 
