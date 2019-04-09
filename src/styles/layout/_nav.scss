@@ -25,10 +25,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    }
 
-    .navbar__menu--open {
-        display: flex !important;
+        &.navbar__menu--open{
+            display: flex;
+        }
     }
 
 
