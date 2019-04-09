@@ -12,6 +12,7 @@
 
     z-index: 1;
 
+
     .navbar__menu{
         display: none;
 
@@ -27,7 +28,7 @@
     }
 
     .navbar__menu--open {
-        display: flex;
+        display: flex !important;
     }
 
 
