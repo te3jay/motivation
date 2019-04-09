@@ -25,6 +25,7 @@ $( document ).ready( function() {
     $(".navbar").toggleClass("navbar--open")
     $(".navbar__ul").toggleClass("navbar__ul--open")
     $(".navbar__menu").toggleClass("navbar__menu--open")
+    
    /* $(".navbar__menu").css({
       'display' : 'flex'
     })*/
