@@ -89,6 +89,31 @@
 
     .navbar{
 
+        .navbar__menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-height: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            top: 0;
+            
+
+            .navbar__ul{
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 25%;
+
+
+                .navbar__menu__a{
+                    font-size: 12px;
+                    color: $accent;
+                }
+            }
+        }
+
 
         .burger{
             display: none;

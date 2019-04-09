@@ -19,7 +19,8 @@ $( document ).ready( function() {
   else
      e.style.display = 'flex';
 }*/
-
+var newWindowWidth = $(window).width();
+if(newWindowWidth < 969){
   $(".burger").click(function(){
     $(".burger").toggleClass("open")
     $(".navbar").toggleClass("navbar--open")
@@ -38,6 +39,8 @@ $( document ).ready( function() {
     $(".navbar__ul").toggleClass("navbar__ul--open")
     $(".navbar__menu").toggleClass("navbar__menu--open")
   })
+
+}
 
 });
 
