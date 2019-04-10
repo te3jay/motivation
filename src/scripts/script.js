@@ -45,40 +45,29 @@ if(newWindowWidth < 969){
 /*$(".grid-item").click(function(){
   $(this).toggleClass("grid-item--active")
 })*/
+function openModal() {
+  document.getElementById('modal').style.display = "block";
+}
 
-var $grid = $('.grid').masonry({
-  itemSelector: '.grid-item'
+function closeModal() {
+  document.getElementById('modal').style.display = "none";
+}
+
+$(".grid-item").click(function(){
+  openModal();
+  var background = $(this).css("background-image");
+  $(".modal-content__image").css({
+    'background-image' : background
+  })
+
 });
-
-$grid.on( 'click', '.grid-item', function() {
-  // change size of item via class
-  //$( '.grid-item' ).removeClass('grid-item--gigante');
-  if($( '.grid-item' ).hasClass('grid-item--gigante')){
-      $( '.grid-item' ).removeClass('grid-item--gigante');
-      }
-  
-    $( this ).addClass('grid-item--gigante');
-    var $window = $(window),
-    $element = $('.grid-item--gigante'),
-    elementTop = $element.offset().top,
-    elementHeight = $element.height(),
-    viewportHeight = $window.height(),
-    scrollIt = elementTop; - ((viewportHeight - elementHeight) / 2);
-
-    $window.scrollTop(scrollIt);
-      
-  // trigger layout
-  $grid.masonry();
-
+$(".close-cursor").click(closeModal);
 
 
 });
 
-$grid.on( 'layoutComplete', function( event, laidOutItems ) {
-  console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
-});
 
-});
+
 
 
 
