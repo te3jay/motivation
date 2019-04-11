@@ -12,56 +12,59 @@ $( document ).ready( function() {
       percentPosition: true
   });
 
-/*function toggle_visibility(id) {
-  var e = document.getElementsByClassName(id);
-  if(e.style.display == 'flex')
-     e.style.display = 'none';
-  else
-     e.style.display = 'flex';
-}*/
-var newWindowWidth = $(window).width();
-if(newWindowWidth < 969){
-  $(".burger").click(function(){
-    $(".burger").toggleClass("open")
-    $(".navbar").toggleClass("navbar--open")
-    $(".navbar__ul").toggleClass("navbar__ul--open")
-    $(".navbar__menu").toggleClass("navbar__menu--open")
+  /*function toggle_visibility(id) {
+    var e = document.getElementsByClassName(id);
+    if(e.style.display == 'flex')
+      e.style.display = 'none';
+    else
+      e.style.display = 'flex';
+  }*/
+  var newWindowWidth = $(window).width();
+  if(newWindowWidth < 969){
+    $(".burger").click(function(){
+      $(".burger").toggleClass("open")
+      $(".navbar").toggleClass("navbar--open")
+      $(".navbar__ul").toggleClass("navbar__ul--open")
+      $(".navbar__menu").toggleClass("navbar__menu--open")
+      
+    /* $(".navbar__menu").css({
+        'display' : 'flex'
+      })*/
     
-   /* $(".navbar__menu").css({
-      'display' : 'flex'
-    })*/
-    
-  });
+    });
 
-  $(".navbar__menu__a").click(function(){
-    $(".burger").toggleClass("open")
-    $(".navbar").toggleClass("navbar--open")
-    $(".navbar__ul").toggleClass("navbar__ul--open")
-    $(".navbar__menu").toggleClass("navbar__menu--open")
-  })
+    $(".navbar__menu__a").click(function(){
+      $(".burger").toggleClass("open")
+      $(".navbar").toggleClass("navbar--open")
+      $(".navbar__ul").toggleClass("navbar__ul--open")
+      $(".navbar__menu").toggleClass("navbar__menu--open")
+    })
 
 }
 
 /*$(".grid-item").click(function(){
   $(this).toggleClass("grid-item--active")
 })*/
-function openModal() {
-  document.getElementById('modal').style.display = "block";
-}
+    function openModal() {
+      $("#modal").show("5000").fadeIn();
+    }
 
-function closeModal() {
-  document.getElementById('modal').style.display = "none";
-}
+    function closeModal() {
+      $("#modal").hide("1000").fadeOut();
+    }
 
-$(".grid-item").click(function(){
-  openModal();
-  var background = $(this).css("background-image");
-  $(".modal-content__image").css({
-    'background-image' : background
-  })
+    $(".grid-item").click(function(){
+      openModal();
+      var background = $(this).css("background-image");
+      $(".modal-content__image").css({
+        'background-image' : background
+      });
 
-});
-$(".close-cursor").click(closeModal);
+      var caption = $(this).find("p").text();
+      $(".modal-content__caption").text(caption);
+
+    });
+      $(".close-cursor").click(closeModal);
 
 
 });

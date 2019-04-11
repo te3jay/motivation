@@ -112,7 +112,7 @@
         right: 0;
         left: 0;
 
-        background-color: rgba($color: darkgrey, $alpha: .9);
+        background-color: rgba($color: grey, $alpha: .9);
     }
 
     .modal__content {
@@ -129,12 +129,14 @@
         position: relative;
         color: #fff;
         font-size: 40px;
+        font-weight: bold;
         margin: 0 auto;
         z-index: 7;
     }
 
     .modal-content__image{
         width: 100%;
+        max-width: 100vw;
         height: 100%;
 
         background-position: center;
@@ -146,6 +148,12 @@
 
     .modal-content__caption {
         text-align: center;
+        color: #fff;
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        text-shadow: 1px 1px #000;
+
+        margin-bottom: 50px;
     }
     
 }
