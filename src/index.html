@@ -157,18 +157,21 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form name="contactform" action="#" id="contactform">
+                <form name="contactform" action="#" id="contactform" class="validate-form" novalidate>
                     <div class="form-body">
-                        <label for="name">name</label>
-                        <input type="text" id="name" name="name" placeholder="incognito">
-                        <p class="form__feedback form-feedback-name"></p>
-                        <label for="email">e-mail</label>
-                        <input type="text" id="email" name="email" placeholder="incognito@gmail.com" >
-                        <p class="form__feedback form-feedback-email"></p>
-                        <label for="message">message</label>
-                        <textarea name="message" id="message" cols="30" rows="5" placeholder="Your question or suggestion" ></textarea>
-                        <p class="form__feedback form-feedback-message"></p>
-                    </div>
+                            <div class="form-row">
+                                <label for="name">name</label>
+                                <input type="text" id="name" name="name" placeholder="incognito" class="required" data-required="Gelieve uw naam in te vullen">
+                            </div>
+                            <div class="form-row">
+                                <label for="email">e-mail</label>
+                                <input type="email" id="email" name="email" placeholder="incognito@gmail.com" class="required" data-required="Gelieve uw emailadres in te vullen" data-required-mail="Gelieven een correct emailadres in te vullen.">
+                            </div>
+                            <div class="form-row">
+                                <label for="message">message</label>
+                                <textarea name="message" id="message" cols="30" rows="5" placeholder="Your question or suggestion" class="required" data-required="Gelieve een bericht in te vullen."></textarea>
+                            </div>
+                        </div>
 
                         <button type="submit" name="submit" class="submit">
                             <span class="fa-stack fa-2x" type="submit">

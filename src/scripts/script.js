@@ -27,6 +27,7 @@ $( document ).ready( function() {
       $(".navbar__ul").toggleClass("navbar__ul--open")
       $(".navbar__menu").toggleClass("navbar__menu--open")
       
+      
     /* $(".navbar__menu").css({
         'display' : 'flex'
       })*/
@@ -46,7 +47,7 @@ $( document ).ready( function() {
   $(this).toggleClass("grid-item--active")
 })*/
     function openModal() {
-      $("#modal").show("5000").fadeIn();
+      $("#modal").show();
     }
 
     function closeModal() {
@@ -69,48 +70,76 @@ $( document ).ready( function() {
       // Form-validation
 
 
-      $("#contactform").on('submit',function(){
+      var validateForm = function() {
 
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        $('.validate-form').on('submit', function(e){
 
-        if( document.contactform.name.value == "" ) {
-          $(".form-feedback-name").text("Please provide your name!");
-          document.contactform.name.focus() ;
-          return false;
-       }
-       else {
-        $(".form-feedback-name").text("");
-      }
-       if( document.contactform.email.value == "" ) {
-        $(".form-feedback-email").text("Please provide a correct email");
-          return false;
-       }
-       else {
-        $(".form-feedback-email").text("");
-        document.contactform.email.focus() ;
-      }
+            var valid = false, // Form valid?
+                errCount = 0, // Aantal errors
+                fields = document.querySelectorAll('form .required'), // Target de required velden
+                checkMail = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm; // Check voor valid email
+    
+            if (!fields.length) { return true; } // Check om te zien of er velden required zijn, zoniet return true;
+    
+            // Loopen door alle velden
+            [].forEach.call(fields, function(field) {
 
-       if (document.contactform.email.value.match(mailformat)){
-        $(".form-feedback-email").text("");
-        document.contactform.email.focus() ;
-       }
-       else {
-        $(".form-feedback-email").text("Please provide a correct email");
-        return false;
-      }
+                removeErroField(field);
+              
+                // Als een veld een lege value heeft of null:
+                if(field.value == '' || field.value == null) {
+    
+                    field.classList.add('error'); // Aan het veld class 'error' toevoegen
+                    errCount ++; // Aantal errors +1
+                    createErrorField(field, field.dataset.required);
+    
+                // Check if field type is email en of emailadres wel degelijk een emailadres is
+                } else if (field.type == 'email' && !checkMail.test(field.value)) {
+                    
+                    field.classList.add('error'); // Aan het veld class 'error' toevoegen
+                    errCount ++; // Aantal errors +1
+                    createErrorField(field, field.dataset.requiredMail);
+    
+                // Anders:
+                } else {
+                    
+                    field.classList.remove('error'); // 'error' class verwijderen van veld
+                    removeErroField(field);
+    
+                }
+    
+            });
+    
+            // Als er 0 errors zijn, zet valid op true zodat form kan submitten
+            if (errCount === 0) { valid = true; }
+    
+            return valid;
+    
+        });
 
-       if( document.contactform.message.value == "" ) {
-        $(".form-feedback-message").text("You did not enter a message");
-          document.contactform.message.focus() ;
-          return false;
-       }
-       else {
-        $(".form-feedback-message").text("");
-      }
+        // Create een error message
+        var createErrorField = function(fld, msg) {
 
-      return( true );
+            var errorMsg = document.createElement('span');
+                errorMsg.classList.add('error-msg'),
+                errorMsg.innerHTML = msg;
 
-      })
+            fld.parentNode.appendChild(errorMsg);
+
+        }
+
+        // Verwijder error messages
+        var removeErroField = function(fld) {
+
+            var errorMsg = fld.parentNode.querySelector('.error-msg');
+            if (!errorMsg) { return; }
+            fld.parentNode.querySelector('.error-msg').remove();
+
+        }
+
+    }
+
+    validateForm();
 });
 
 

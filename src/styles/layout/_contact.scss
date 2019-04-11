@@ -11,6 +11,11 @@
             display: flex;
             flex-direction: column;
 
+            .form-row{
+                display: flex;
+                flex-direction: column;
+            }
+
             label {
                 text-transform: uppercase;
                 font-weight: 800;
@@ -31,7 +36,7 @@
             input, label, button,textarea {
                 margin-top: 20px;
             }
-            p {color:red;}
+            .error-msg {color:red;}
     
         }
         button{
@@ -74,7 +79,7 @@
                 input, textarea{
                     margin-bottom: 20px;
                 }
-                .form__feedback{
+                .error-msg{
                     margin-top: -15px;
                 }
             }
