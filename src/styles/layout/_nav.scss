@@ -10,9 +10,7 @@
     background-color: rgba($color: #fff, $alpha: .9);
     color: #fff;
 
-    z-index: 3;
-
-    transition: .5s ease-in-out;
+    z-index: 1;
 
 
     .navbar__menu{
@@ -24,11 +22,12 @@
         left: 0;
         right: 0;
 
+        width: 100%;
+        max-width: 1100px;
+
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
-        transition: .5s;
 
         &.navbar__menu--open{
             display: flex;
@@ -43,8 +42,6 @@
         flex-direction: column;
         z-index: 9;
         color: #fff;
-
-        transition: .5s;
         
         li {
 
