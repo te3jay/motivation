@@ -68,32 +68,50 @@ $( document ).ready( function() {
 
       // Form-validation
 
-     /* $(".submit").click(function(){
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var message = $("#message").val();
+      $("#contactform").on('submit',function(){
 
-        if (name.length > 0){
-          $(".form-feedback-name").text(name)
-        }
-      })*/
-
-      function validate() {
-      
         if( document.contactform.name.value == "" ) {
-           alert( "Please provide your name!" );
-           document.myForm.Name.focus() ;
-           return false;
-        }
-        if( document.contactform.email.value == "" ) {
-           alert( "Please provide your Email!" );
-           document.myForm.EMail.focus() ;
-           return false;
-        }
-        
-        return( true );
+          $(".form-feedback-name").text("Please provide your name!");
+          document.contactform.name.focus() ;
+          return false;
+       }
+       if( document.contactform.email.value == "" ) {
+        $(".form-feedback-email").text("Please provide a correct email");
+          document.contactform.email.focus() ;
+          return false;
+       }
 
-      }
+       if (validateEmail == false){
+        $(".form-feedback-email").text("Please provide a correct email");
+        document.contactform.email.focus() ;
+        return false;
+       }
+
+       if( document.contactform.message.value == "" ) {
+        $(".form-feedback-message").text("You did not enter a message");
+          document.contactform.message.focus() ;
+          return false;
+       }
+
+       
+       
+       return( true );
+
+      })
+
+
+      //email
+
+      function validateEmail() {
+        var emailID = document.contactform.email.value;
+        atpos = emailID.indexOf("@");
+        dotpos = emailID.lastIndexOf(".");
+        
+        if (atpos < 1 || ( dotpos - atpos < 2 )) {
+           return false;
+        }
+        return( true );
+     }
 
 
 
