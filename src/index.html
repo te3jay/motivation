@@ -157,7 +157,7 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form name="contactform" action="#" id="contactform" onsubmit="return validateForm()" method="POST">
+                <form name="contactform" action="#" id="contactform" onsubmit = "return(validate());">
                     <div class="form-body">
                         <label for="name">name</label>
                         <input type="text" id="name" name="name" placeholder="incognito">
@@ -170,7 +170,7 @@
                         <p class="form-feedback-message"></p>
                     </div>
 
-                        <button type="submit" name="submit">
+                        <button type="submit" name="submit" class="submit">
                             <span class="fa-stack fa-2x" type="submit">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-telegram-plane fa-stack-1x fa-inverse"></i>

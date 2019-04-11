@@ -66,6 +66,36 @@ $( document ).ready( function() {
     });
       $(".close-cursor").click(closeModal);
 
+      // Form-validation
+
+     /* $(".submit").click(function(){
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $("#message").val();
+
+        if (name.length > 0){
+          $(".form-feedback-name").text(name)
+        }
+      })*/
+
+      function validate() {
+      
+        if( document.contactform.name.value == "" ) {
+           alert( "Please provide your name!" );
+           document.myForm.Name.focus() ;
+           return false;
+        }
+        if( document.contactform.email.value == "" ) {
+           alert( "Please provide your Email!" );
+           document.myForm.EMail.focus() ;
+           return false;
+        }
+        
+        return( true );
+
+      }
+
+
 
 });
 
