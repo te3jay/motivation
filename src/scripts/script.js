@@ -68,6 +68,49 @@ $( document ).ready( function() {
 
       // Form-validation
 
+
+      $("#contactform").on('submit',function(){
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if( document.contactform.name.value == "" ) {
+          $(".form-feedback-name").text("Please provide your name!");
+          document.contactform.name.focus() ;
+          return false;
+       }
+       else {
+        $(".form-feedback-name").text("");
+      }
+       if( document.contactform.email.value == "" ) {
+        $(".form-feedback-email").text("Please provide a correct email");
+          return false;
+       }
+       else {
+        $(".form-feedback-email").text("");
+        document.contactform.email.focus() ;
+      }
+
+       if (document.contactform.email.value.match(mailformat)){
+        $(".form-feedback-email").text("");
+        document.contactform.email.focus() ;
+       }
+       else {
+        $(".form-feedback-email").text("Please provide a correct email");
+        return false;
+      }
+
+       if( document.contactform.message.value == "" ) {
+        $(".form-feedback-message").text("You did not enter a message");
+          document.contactform.message.focus() ;
+          return false;
+       }
+       else {
+        $(".form-feedback-message").text("");
+      }
+
+      return( true );
+
+      })
 });
 
 
