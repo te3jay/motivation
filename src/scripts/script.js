@@ -68,53 +68,53 @@ $( document ).ready( function() {
 
       // Form-validation
 
+
+
+
+
+      
       $("#contactform").on('submit',function(){
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
         if( document.contactform.name.value == "" ) {
           $(".form-feedback-name").text("Please provide your name!");
           document.contactform.name.focus() ;
           return false;
        }
+       else {
+        $(".form-feedback-name").text("");
+      }
        if( document.contactform.email.value == "" ) {
         $(".form-feedback-email").text("Please provide a correct email");
           document.contactform.email.focus() ;
           return false;
        }
+       else {
+        $(".form-feedback-email").text("");
+      }
 
-       if (validateEmail == false){
-        $(".form-feedback-email").text("Please provide a correct email");
+       if (document.contactform.email.value.match(mailformat)){
+        $(".form-feedback-email").text("");
         document.contactform.email.focus() ;
-        return false;
        }
+       else {
+        $(".form-feedback-email").text("Please provide a correct email");
+        return false;
+      }
 
        if( document.contactform.message.value == "" ) {
         $(".form-feedback-message").text("You did not enter a message");
           document.contactform.message.focus() ;
           return false;
        }
+       else {
+        $(".form-feedback-message").text("");
+      }
 
-       
-       
-       return( true );
+      return( true );
 
       })
-
-
-      //email
-
-      function validateEmail() {
-        var emailID = document.contactform.email.value;
-        atpos = emailID.indexOf("@");
-        dotpos = emailID.lastIndexOf(".");
-        
-        if (atpos < 1 || ( dotpos - atpos < 2 )) {
-           return false;
-        }
-        return( true );
-     }
-
-
-
 });
 
 

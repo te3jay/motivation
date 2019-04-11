@@ -71,8 +71,11 @@
                 label{
                     margin-top: 0;
                 }
-                input{
+                input, textarea{
                     margin-bottom: 20px;
+                }
+                .form__feedback{
+                    margin-top: -15px;
                 }
             }
             button{
