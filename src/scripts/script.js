@@ -26,6 +26,7 @@ $( document ).ready( function() {
       $(".navbar").toggleClass("navbar--open")
       $(".navbar__ul").toggleClass("navbar__ul--open")
       $(".navbar__menu").toggleClass("navbar__menu--open")
+      $("body").toggleClass("body--overlay-open")
       
       
     /* $(".navbar__menu").css({
@@ -51,11 +52,15 @@ $( document ).ready( function() {
       $("#modal").show()
       $("#modal").css({
         'opacity' : '1'
-      });
+      })
+     // $("#modal").fadeOut("slow")
     }
 
     function closeModal() {
-      $("#modal").hide("1000").fadeOut();
+      $("#modal").hide("1000").fadeOut()
+      $("#modal").css({
+        'opacity' : '0'
+      })
     }
 
     $(".grid-item").click(function(){

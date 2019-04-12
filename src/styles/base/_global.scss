@@ -52,6 +52,11 @@ p {
 a {
   text-decoration: none;
   color: $accent;
+  transition: .25s;
+}
+
+a:hover {
+  color: #000;
 }
 
 i {

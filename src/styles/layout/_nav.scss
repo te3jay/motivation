@@ -95,6 +95,10 @@
 
 }
 
+.body--overlay-open {
+    overflow: hidden;
+}
+
 
 @include respond-to('desktop'){
 
@@ -121,6 +125,10 @@
                 .navbar__menu__a{
                     font-size: 12px;
                     color: $accent;
+                    transition: .25s;
+                }
+                .navbar__menu__a:hover{
+                    color: #000;
                 }
             }
         }
