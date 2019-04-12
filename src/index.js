@@ -6,6 +6,7 @@ import './index.scss';
 import './scripts/script.js';
 import './scripts/masonry.pkgd.min.js';
 import './scripts/formvalidation.js';
+import './scripts/bodyScrollLock.js';
 
 import './images/Photo1.png';
 import './images/Photo2.png';

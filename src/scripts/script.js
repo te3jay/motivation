@@ -19,6 +19,13 @@ $( document ).ready( function() {
     else
       e.style.display = 'flex';
   }*/
+
+  //const bodyScrollLock = require('body-scroll-lock');
+  const bodyScrollLock = require('./bodyScrollLock.js');
+  const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+  const enableBodyScroll = bodyScrollLock.enableBodyScroll; 
+
+
   var newWindowWidth = $(window).width();
   if(newWindowWidth < 969){
     $(".burger").click(function(){
@@ -26,21 +33,28 @@ $( document ).ready( function() {
       $(".navbar").toggleClass("navbar--open")
       $(".navbar__ul").toggleClass("navbar__ul--open")
       $(".navbar__menu").toggleClass("navbar__menu--open")
-      $("body").toggleClass("body--overlay-open")
+      if ($(".burger").hasClass("open")){
+        disableBodyScroll()
+      }
+      else if (!$(".burger").hasClass("open")){
+        enableBodyScroll()
+      }
       
-      
-    /* $(".navbar__menu").css({
-        'display' : 'flex'
-      })*/
-    
+
     });
+  
 
     $(".navbar__menu__a").click(function(){
       $(".burger").toggleClass("open")
       $(".navbar").toggleClass("navbar--open")
       $(".navbar__ul").toggleClass("navbar__ul--open")
       $(".navbar__menu").toggleClass("navbar__menu--open")
-      $("body").toggleClass("body--overlay-open")
+     if ($(".burger").hasClass("open")){
+      disableBodyScroll()
+    }
+    else if (!$(".burger").hasClass("open")){
+      enableBodyScroll()
+    }
     })
 
 }
