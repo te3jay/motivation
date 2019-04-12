@@ -12,15 +12,7 @@ $( document ).ready( function() {
       percentPosition: true
   });
 
-  /*function toggle_visibility(id) {
-    var e = document.getElementsByClassName(id);
-    if(e.style.display == 'flex')
-      e.style.display = 'none';
-    else
-      e.style.display = 'flex';
-  }*/
-
-  //const bodyScrollLock = require('body-scroll-lock');
+  
   const bodyScrollLock = require('./bodyScrollLock.js');
   const disableBodyScroll = bodyScrollLock.disableBodyScroll;
   const enableBodyScroll = bodyScrollLock.enableBodyScroll; 
@@ -33,6 +25,7 @@ $( document ).ready( function() {
       $(".navbar").toggleClass("navbar--open")
       $(".navbar__ul").toggleClass("navbar__ul--open")
       $(".navbar__menu").toggleClass("navbar__menu--open")
+      $(".navbar__img").toggleClass("navbar__img--down")
       if ($(".burger").hasClass("open")){
         disableBodyScroll()
       }
@@ -59,9 +52,7 @@ $( document ).ready( function() {
 
 }
 
-/*$(".grid-item").click(function(){
-  $(this).toggleClass("grid-item--active")
-})*/
+
     function openModal() {
       $("#modal").show()
       $("#modal").css({

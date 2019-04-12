@@ -9,7 +9,10 @@ footer {
         a{
         color: color(sections);
         margin-top: 15px;
-    }
+        } 
+        a:hover {
+            color: #000;
+        }  
 }
 }
 @include respond-to('desktop'){

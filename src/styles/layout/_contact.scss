@@ -31,12 +31,18 @@
                 font-size: 16px;
                 
                 border-bottom: 2px solid $light-grey;
+
+                resize: none;
             }
 
             input, label, button,textarea {
                 margin-top: 20px;
             }
-            .error-msg {color:red;}
+            .error-msg {color:#ff2222;}
+
+            .error{
+                border-bottom: 2px solid #ff2222;
+            }
     
         }
         button{
