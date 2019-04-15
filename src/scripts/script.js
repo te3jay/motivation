@@ -55,7 +55,7 @@ $( document ).ready( function() {
 
 
     function openModal() {
-      //$("#modal").show()
+
       $("#modal").css({
         'opacity' : '1',
         'z-index' : '5'
@@ -63,22 +63,25 @@ $( document ).ready( function() {
       setTimeout(function(){
         $('.modal-content__image').addClass("image--open")
       }, 500);  
-     // $("#modal").fadeOut("slow")
+
     }
 
     function closeModal() {
-      $("#modal").css({
-        'opacity' : '0',
-        'z-index' : '0'
-      })
+      
+        setTimeout(function(){
+          $("#modal").css({
+            'opacity' : '0',
+            'z-index' : '0' 
+         })
+      }, 300)
       $('.modal-content__image').removeClass("image--open")
     }
 
     $(".grid-item").click(function(){
       openModal();
-      var background = $(this).css("background-image");
+      
       $(".modal-content__image").css({
-        'background-image' : background
+        'background-image' : ('url(' + $(this).data("image") + ')')
       });
 
       var caption = $(this).find("p").text();
