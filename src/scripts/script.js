@@ -55,18 +55,23 @@ $( document ).ready( function() {
 
 
     function openModal() {
-      $("#modal").show()
+      //$("#modal").show()
       $("#modal").css({
-        'opacity' : '1'
+        'opacity' : '1',
+        'z-index' : '5'
       })
+      setTimeout(function(){
+        $('.modal-content__image').addClass("image--open")
+      }, 500);  
      // $("#modal").fadeOut("slow")
     }
 
     function closeModal() {
-      $("#modal").hide("1000").fadeOut()
       $("#modal").css({
-        'opacity' : '0'
+        'opacity' : '0',
+        'z-index' : '0'
       })
+      $('.modal-content__image').removeClass("image--open")
     }
 
     $(".grid-item").click(function(){

@@ -8,6 +8,7 @@
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    z-index: 1;
     }
 
     /* clearfix */
@@ -105,7 +106,7 @@
     .grid-item--height3 { height: 446px; }
 
     .modal{
-        display: none;
+        display: block;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -113,9 +114,9 @@
         left: 0;
         opacity: 0;
 
-        z-index: 5;
+        z-index: 0;
 
-        transition: opacity 1s;
+        transition: opacity .5s linear;
 
         background-color: rgba($color: grey, $alpha: .9);
     }
@@ -149,6 +150,13 @@
         background-repeat: no-repeat;
 
         margin: auto;
+
+        transform: translateY(100%);
+        transition: .3s ease-in;
+    }
+
+    .image--open{
+        transform: translateY(0%);
     }
 
     .modal-content__caption {
