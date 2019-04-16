@@ -91,18 +91,19 @@ $( document ).ready( function() {
       $(".close-cursor").click(closeModal);
 
       // Form-validation
+      
 
 
       var validateForm = function() {
 
         $('.validate-form').on('submit', function(e){
 
-            var valid = false, // Form valid?
+            var  
                 errCount = 0, // Aantal errors
                 fields = document.querySelectorAll('form .required'), // Target de required velden
                 checkMail = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm; // Check voor valid email
     
-            if (!fields.length) { return true; } // Check om te zien of er velden required zijn, zoniet return true;
+            if (!fields.length) { return; } // Check om te zien of er velden required zijn, zoniet return true;
     
             // Loopen door alle velden
             [].forEach.call(fields, function(field) {
@@ -134,9 +135,7 @@ $( document ).ready( function() {
             });
     
             // Als er 0 errors zijn, zet valid op true zodat form kan submitten
-            if (errCount === 0) { valid = true; }
-    
-            return valid;
+            if (errCount !== 0) { e.preventDefault(); }
     
         });
 
@@ -156,7 +155,7 @@ $( document ).ready( function() {
 
             var errorMsg = fld.parentNode.querySelector('.error-msg');
             if (!errorMsg) { return; }
-            fld.parentNode.querySelector('.error-msg').remove();
+            fld.parentNode.removeChild(errorMsg);
 
         }
 
